@@ -19,7 +19,7 @@
                     <button type="submit" class="btn btn-danger">Удалть карточку</button>
                 </form>
                 <br />
-                <div class="col-3"><a href="{{ route('main.index') }}"class="btn btn-primary">Назад</a></div>
+                <div class="col-3"><a href="{{ route('catalog.index') }}"class="btn btn-primary">Назад</a></div>
             </div>
         </div>
     </div>
