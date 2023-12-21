@@ -16,7 +16,7 @@
                 <form class="col-3" action="{{ route('main.delete', $post->id) }}" method="POST">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-danger">Удалть карточку</button>
+                    <button type="submit" class="btn btn-danger">Удалить карточку</button>
                 </form>
                 <br />
                 <div class="col-3"><a href="{{ route('catalog.index') }}"class="btn btn-primary">Назад</a></div>
