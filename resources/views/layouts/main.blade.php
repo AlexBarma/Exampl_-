@@ -71,7 +71,7 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <form action="{{ route('catalog.liked',$post->id )}}" method="POST">
+                                <form action="{{ route('user.likedPost',$post->id )}}" method="POST">
                                     @csrf
                                     <button  type="submit" class="dropdown-item">
                                         Понравившиеся посты

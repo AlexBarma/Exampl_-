@@ -17,8 +17,8 @@ class LikedController extends Controller
     // }
     public function postLiked(){
         $posts=auth()->user()->LikedPosts;
-        dd($posts);
-        return view('post.show',compact('post'));
+        // dd($posts);
+        return view('user.likedPost',compact('posts'));
 
     }
 }

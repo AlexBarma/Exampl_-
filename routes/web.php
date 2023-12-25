@@ -54,7 +54,7 @@ Route::delete('/main/{post}',[DestroyController::class,'destroy'])->name('main.d
 });
 
 //Создание раздела понравившегося поста
-Route::post('/catalog/{post}/liked',[LikedController::class,'postLiked'])->name('catalog.liked');//Роут на понравившиеся посты
+Route::post('/catalog/{post}/liked',[LikedController::class,'postLiked'])->name('user.likedPost');//Роут на понравившиеся посты
 
 
 
