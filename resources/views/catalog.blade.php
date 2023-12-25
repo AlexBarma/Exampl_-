@@ -17,7 +17,7 @@
                             <a href="{{ route('main.show', $post->id) }}" class="btn btn-primary">Открыть карточку</a>
                         </div>
 
-                        <form action="{{ route('catalog.like',$post->id )}}" method="POST">
+                        <form action="{{ route('catalog.liked',$post->id )}}" method="POST">
                             @csrf
                             <button type="submit" class="fw-light nav-link fs-6">
                                 <i class="bi bi-heart{{ ($post->id)? '-fill' : ''}}"></i>

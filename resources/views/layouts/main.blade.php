@@ -66,11 +66,16 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    Выйти из учетной записи
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
+                                </form>
+                                <form action="{{ route('catalog.liked',$post->id )}}" method="POST">
+                                    @csrf
+                                    <button  type="submit" class="dropdown-item">
+                                        Понравившиеся посты
+                                    </button>
                                 </form>
                             </div>
                         </li>

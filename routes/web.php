@@ -16,7 +16,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\MainController;
 
-use App\Http\Controllers\LikeController;
+use App\Http\Controllers\LikedController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,8 +53,8 @@ Route::patch('/main/{post}',[UpdateController::class,'update'])->name('main.upda
 Route::delete('/main/{post}',[DestroyController::class,'destroy'])->name('main.delete');//удаление поста
 });
 
-//Создание лайков
-Route::post('/catalog/{post}/likes',[LikeController::class,'like'])->name('catalog.like');//Роут лайка
+//Создание раздела понравившегося поста
+Route::post('/catalog/{post}/liked',[LikedController::class,'postLiked'])->name('catalog.liked');//Роут на понравившиеся посты
 
 
 
