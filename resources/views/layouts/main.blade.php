@@ -14,7 +14,7 @@
         <div class="container-fluid ">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" style="width: 3rem; href="{{ route('main.index') }}"><img src="images\logos\logo.png" class="card-img-top" alt="logo"></a>
+                    <a class="nav-link" style="width: 3rem;" href="{{ route('main.index') }}"><img src="{{ asset('images\logos\logo.png') }}" class="card-img-top" alt="logo"></a>
                 </li>
 
             </ul>
@@ -96,7 +96,7 @@
     <div class="container bg-body-tertiary bg-gradient p-3 row">
         <div class="col-3">
             <div class="card" style="width: 7rem;">
-                <img src="images\logos\logo.png" class="card-img-top" alt="logo">
+                <a href="#"><img src="{{ asset('images\logos\logo.png') }}" class="card-img-top" alt="logo"></a>
             </div>
         </div>
         <div class="col-3">
