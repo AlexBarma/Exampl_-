@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Post;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CreateController extends BaseController
 {
     public function create(){
-        return view('post.create');
+        $categories=Category::all();
+
+        return view('post.create',compact('categories'));
     }
 }
