@@ -18,13 +18,12 @@
     <form action="{{ route('main.store') }}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="title" class="form-label">Ваш электронный адрес</label>
-            <input type="text" name="title" class="form-control" id="title" placeholder="email">
-
+            <label for="email" class="form-label">Ваш электронный адрес</label>
+            <input type="text" name="email" class="form-control" id="email" placeholder="email">
         </div>
         <div class="mb-3">
-            <label for="content" class="form-label">Вопрос</label>
-            <textarea name="content" class="form-control" id="content" placeholder="Задайте нам вопрос"></textarea>
+            <label for="user_messages" class="form-label">Вопрос</label>
+            <textarea name="messages" class="form-control" id="user_messages" placeholder="Задайте нам вопрос"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>

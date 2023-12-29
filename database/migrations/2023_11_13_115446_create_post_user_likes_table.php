@@ -21,8 +21,8 @@ return new class extends Migration
             $table->index('post_id','pul_post_idx');
             $table->index('user_id','pul_user_idx');
             //Создаем ключ указываем таблицу в которой будем искать и имя столбца на который будем ориентироваться
-            $table->foreign('post_id','pul_post_fk')->on('post')->references('id');
-            $table->foreign('post_id','pul_user_fk')->on('user')->references('id');
+            $table->foreign('post_id','pul_post_fk')->on('posts')->references('id');
+            $table->foreign('post_id','pul_user_fk')->on('users')->references('id');
         });
     }
 
