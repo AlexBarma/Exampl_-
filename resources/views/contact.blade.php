@@ -15,7 +15,7 @@
   <div class="text-center">
     НАПИШИТЕ НАМ ЕСЛИ ПОЯВИЛИСЬ ВОПРОСЫ
   </div>
-    <form action="{{ route('main.store') }}" method="POST">
+    <form action="{{ route('main.storeMessage') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="email" class="form-label">Ваш электронный адрес</label>
@@ -27,16 +27,4 @@
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
-    {{-- <div class="card text-center">
-    <div class="card-header">
-      Контакты
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">196084, Санкт-Петербург, ул. Киевская д.5, лит. НБ</h5>
-      <p class="card-text">
-        8(812) 337-15-88, 8 (800) 250-51-15 (звонок бесплатный)
-        info@cheese-cake.ru</p>
-      <a href="#" class="btn btn-primary">Напишите нам</a>
-    </div>
-  </div> --}}
 @endsection

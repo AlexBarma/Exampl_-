@@ -53,8 +53,16 @@ Route::patch('/main/{post}',[UpdateController::class,'update'])->name('main.upda
 Route::delete('/main/{post}',[DestroyController::class,'destroy'])->name('main.delete');//удаление поста
 });
 
+//Отправка формы сообщения от пользователей
+Route::post('/main',[StoreController::class,'storeMessage'])->name('main.storeMessage');
+
 //Создание раздела понравившегося поста
 Route::post('/catalog/{post}/liked',[LikedController::class,'postLiked'])->name('user.likedPost');//Роут на понравившиеся посты
+
+//Создание роута message
+
+ Route::post('/contact',[ContactController::class,'index'])->name('contact.index');//роута создания и внесения message в базу
+
 
 
 

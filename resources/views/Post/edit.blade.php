@@ -20,7 +20,7 @@
             {{-- <option selected>Выберите категорию</option> --}}
             @foreach ($categories as $category)
                 {
-                <option {{ $category->id === $post->category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
+                <option {{ $category->id === $post->category_id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
                 }
             @endforeach
 

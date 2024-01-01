@@ -13,18 +13,21 @@ class StoreController extends BaseController
         $data=request()->validate([
         'title'=>'',
         'content'=>'',
+        'category_id'=>'',
         'image'=>'',
 
-        $dataMessage=request()->validate([
-            'email'=>'',
-            'messages'=>'',
-        ])
-    ]);
-        // dd($dataMessage);
-        UserMessage::create($dataMessage);
 
+    ]);
         Post::create($data);//После пройденной валидации данные созданного поста приходят на страницу создания поста и сохраняются в базу данных
         return redirect()->route('main.index');//После валидации и сохранения в БД эта строчка переносит пользователя на нужную страницу
+    }
+    public function storeMessage(){
+        $data=request()->validate(([
+            'email'=>'',
+            'messages'=>'',
+        ]));
+        UserMessage::create($data);//После пройденной валидации данные созданного письма  сохраняются в базу данных
+        return redirect()->route('main.index');
     }
 
 }
