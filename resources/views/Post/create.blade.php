@@ -1,4 +1,5 @@
 @extends('layouts.main')
+
 @section('content')
     <form action="{{ route('main.store') }}" method="POST">
         @csrf
@@ -13,8 +14,7 @@
         </div>
         <div class="mb-3">
             <label for="category" class="form-label">Категория</label>
-            <select name="category_id" class="form-control" id="category_id"
-                placeholder="Category">
+            <select name="category_id" class="form-control" id="category_id" placeholder="Category">
                 {{-- <option selected>Выберите категорию</option> --}}
                 @foreach ($categories as $category)
                     {

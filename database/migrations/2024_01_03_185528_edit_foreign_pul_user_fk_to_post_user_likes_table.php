@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('user_messages', function (Blueprint $table) {
-            $table->string('soft_deletes');
+        Schema::table('post_user_likes', function (Blueprint $table) {
+            $table->foreign('user_id','pul_user_fk')->on('users')->references('id')->change();
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('user_messages', function (Blueprint $table) {
-            $table->dropColumn('soft_deletes');
+        Schema::table('post_user_likes', function (Blueprint $table) {
+            $table->dropForeign('user_id','pul_user_fk');
         });
     }
 };

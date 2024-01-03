@@ -54,31 +54,13 @@ Route::delete('/main/{post}',[DestroyController::class,'destroy'])->name('main.d
 });
 
 //Отправка формы сообщения от пользователей
-Route::post('/main',[StoreController::class,'storeMessage'])->name('main.storeMessage');
+Route::post('/message',[StoreController::class,'storeMessage'])->name('main.storeMessage');
 
 //Создание раздела понравившегося поста
-Route::post('/catalog/{post}/liked',[LikedController::class,'postLiked'])->name('user.likedPost');//Роут на понравившиеся посты
+Route::get('/likedPosts',[LikedController::class,'likedPost'])->name('user.likedPost');//Роут на понравившиеся посты
+Route::post('/main/{post}',[LikedController::class,'addLiked'])->name('main.addLiked');//проверка строк понравивишегося поста и внесение в базу
 
 //Создание роута message
-
- Route::post('/contact',[ContactController::class,'index'])->name('contact.index');//роута создания и внесения message в базу
-
+Route::post('/contact',[ContactController::class,'index'])->name('contact.index');//роута создания и внесения message в базу
 
 
-
-
-
-
-
-//Route поста
-
-//Route::group(['namespace'=>'Post'],function(){//указываем что все эти роуты находятся в папке Post, через эту функцию прибавляем в их путь Post
-
-    // Route::get('/main/create','CreateController')->name('main.create');//создание нового поста
-    // Route::post('/main','StoreController')->name('main.store');//проверка строк созданного поста и внесение в базу
-    // Route::get('/main/{page}','ShowController')->name('main.show');//показ созданного поста или вывод ошибки
-    // Route::get('/main/{page}/edit','EditController')->name('main.edit');//изменение уже существующего поста в форме
-    // Route::patch('/main/{page}','UpdateController')->name('main.update');//обновление поста в базе и вывод его на экран
-    // Route::delete('/main/{page}','DestroyController')->name('main.delete');//удаление поста
-
-    //});

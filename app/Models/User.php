@@ -13,6 +13,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table='users'; //указываем созданную таблицу
+    protected $guarded=false; //разрешаем изменения в таблице
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -43,6 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
     public function getJWTIdentifier()//необходимый для работы ДЖВТ метод
     {
         return $this->getKey();
@@ -52,6 +58,7 @@ class User extends Authenticatable
         return [];
     }
 
+    //Функция которая связывает  одного User с таблицей post_user_likes
     public function LikedPosts(){
         return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', 'post_id');
     }

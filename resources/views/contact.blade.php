@@ -1,20 +1,20 @@
 @extends('layouts.main')
 @section('content')
-<div class="card text-center">
-    <div class="card-header">
-      НАШИ КОНТАКТЫ
+    <div class="card text-center">
+        <div class="card-header">
+            НАШИ КОНТАКТЫ
+        </div>
+        <div class="card-body ">
+            <h5 class="card-title">196084, Санкт-Петербург, ул. Киевская д.5, лит. НБ</h5>
+            <p class="card-text">
+                8(812) 337-15-88, 8 (800) 250-51-15 (звонок бесплатный)
+                info@cheese-cake.ru</p>
+        </div>
     </div>
-    <div class="card-body ">
-      <h5 class="card-title">196084, Санкт-Петербург, ул. Киевская д.5, лит. НБ</h5>
-      <p class="card-text">
-        8(812) 337-15-88, 8 (800) 250-51-15 (звонок бесплатный)
-        info@cheese-cake.ru</p>
+    <br>
+    <div class="text-center">
+        НАПИШИТЕ НАМ ЕСЛИ ПОЯВИЛИСЬ ВОПРОСЫ
     </div>
-  </div>
-  <br>
-  <div class="text-center">
-    НАПИШИТЕ НАМ ЕСЛИ ПОЯВИЛИСЬ ВОПРОСЫ
-  </div>
     <form action="{{ route('main.storeMessage') }}" method="POST">
         @csrf
         <div class="mb-3">

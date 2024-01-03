@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function index(){
-        $posts=Post::all();
-        $categories=Category::all();
-        return view('catalog',compact('posts','categories'));
+    public function index()
+    {
+        $posts = Post::all();
+        $categories = Category::all();
+        return view('catalog', compact('posts', 'categories'));
     }
 }

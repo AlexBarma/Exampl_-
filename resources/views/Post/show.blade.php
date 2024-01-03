@@ -26,6 +26,16 @@
                     <button type="submit" class="btn btn-danger">Удалить карточку</button>
                 </form>
                 <br />
+                <form class="col-3" action="{{ route('main.addLiked', $post->id) }}" method="POST">
+                    @csrf
+                    @auth
+                        <button type="submit" class="btn btn-primary">
+                            {{-- @dd(auth()->user()->LikedPosts()); --}}
+                            Добавить в понравившееся
+                        </button>
+                    @endauth
+                </form>
+                <br />
                 <div class="col-3"><a href="{{ route('catalog.index') }}"class="btn btn-primary">Назад</a></div>
             </div>
         </div>

@@ -71,12 +71,15 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <form action="{{ route('user.likedPost', $post->id )}}" method="POST">
+                                <a class="dropdown-item" href="{{ route('user.likedPost') }}">Понравившиеся посты</a>
+                                {{-- @foreach ($posts as $post )
+                                <form action="{{  route('user.likedPost', $post->id )}}" method="POST">
                                     @csrf
                                     <button  type="submit" class="dropdown-item">
                                         Понравившиеся посты
                                     </button>
                                 </form>
+                                @endforeach --}}
                             </div>
                         </li>
                     @endguest

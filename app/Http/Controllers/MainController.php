@@ -10,7 +10,8 @@ class MainController extends Controller
     public function index()
     {
 
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = auth()->user()->LikedPosts;
         return view('layouts.main', compact('posts'));
     }
 
