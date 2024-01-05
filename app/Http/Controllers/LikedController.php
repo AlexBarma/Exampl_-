@@ -17,16 +17,10 @@ class LikedController extends Controller
     }
     public function addLiked(Post $post)
     {
-        $data = request()->validate(
-            [
-                'post_id'=>'',
-                'user_id'=>'',
-            ]
-        );
+            // auth()->user()->LikedPosts->toggle($post->id);
             $data ['post_id'] = $post->id;
             $data ['user_id'] = auth()->user()->id;
-            $posts = auth()->user()->LikedPosts;
-        PostUserLike::create($data); //После пройденной валидации данные созданного письма  сохраняются в базу данных
-        return redirect()->route('main.show',$post->id, compact('posts'));
+        PostUserLike::create($data); //Данные   сохраняются в базу данных
+        return redirect()->route('main.show',$post->id);
     }
 }
