@@ -14,17 +14,25 @@
         <div class="container-fluid ">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" style="width: 3rem;" href="{{ route('main.index') }}"><img src="{{ asset('images\logos\logo.png') }}" class="card-img-top" alt="logo"></a>
+                    <a class="nav-link" style="width: 3rem;" href="{{ route('main.index') }}"><img
+                            src="{{ asset('images\logos\logo.png') }}" class="card-img-top" alt="logo"></a>
                 </li>
 
             </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            href="{{ route('main.index') }}">Меню</a>
+                        <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" href="{{ route('main.index') }}">Меню</a>
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item" href="{{ route('main.create') }}">Создать карточку товара</a></li>
+                            @auth
+                                <li><a class="dropdown-item" href="{{ route('main.create') }}">Создать карточку
+                                        товара</a></li>
+                            @endauth
+                            @guest
+                                <li><a class="dropdown-item" href="{{ route('register') }}">Чтобы создать карточку нужно
+                                        авторизоваться</a></li>
+                            @endguest
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -72,20 +80,12 @@
                                     @csrf
                                 </form>
                                 <a class="dropdown-item" href="{{ route('user.likedPost') }}">Понравившиеся посты</a>
-                                {{-- @foreach ($posts as $post )
-                                <form action="{{  route('user.likedPost', $post->id )}}" method="POST">
-                                    @csrf
-                                    <button  type="submit" class="dropdown-item">
-                                        Понравившиеся посты
-                                    </button>
-                                </form>
-                                @endforeach --}}
                             </div>
                         </li>
                     @endguest
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="поиск" aria-label="Search">
                     <button class="btn btn-outline-secondary" type="submit">Поиск</button>
                 </form>
 
@@ -99,7 +99,8 @@
     <div class="container bg-body-tertiary bg-gradient p-3 row">
         <div class="col-3">
             <div class="card" style="width: 7rem;">
-                <a href="#"><img src="{{ asset('images\logos\logo.png') }}" class="card-img-top" alt="logo"></a>
+                <a href="#"><img src="{{ asset('images\logos\logo.png') }}" class="card-img-top"
+                        alt="logo"></a>
             </div>
         </div>
         <div class="col-3">
@@ -114,7 +115,7 @@
                     <a class="nav-link" href="#">Docs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Examples</a>
+                    <a class="nav-link" href="#">Examples</a>
                 </li>
             </ul>
         </div>
@@ -130,7 +131,7 @@
                     <a class="nav-link" href="#">Starter template</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Webpack</a>
+                    <a class="nav-link" href="#">Webpack</a>
                 </li>
             </ul>
         </div>
@@ -146,7 +147,7 @@
                     <a class="nav-link" href="#">RFS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Examples repo</a>
+                    <a class="nav-link" href="#">Examples repo</a>
                 </li>
             </ul>
         </div>

@@ -44,7 +44,7 @@
     <div class="card mb-3" style="max-width: 1140px;">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ $post->image }}" class="img-fluid rounded-start" alt="...">
+                <img style="height: 188px;" src="{{ $post->image }}" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -81,6 +81,11 @@
                         Добавить в избранное
                     </button>
                 @endauth
+                @guest
+                    <button class="btn btn-primary">
+                        <a class="dropdown-item" href="#">Чтобы добавить себе нужно авторизоваться</a>
+                    </button>
+                @endguest
             </form>
             <br />
             <div class="col-4 mb-2"><a href="{{ route('catalog.index') }}"class="btn btn-primary">Назад</a></div>
