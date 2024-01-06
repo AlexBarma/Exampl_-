@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+//Post
 use App\Http\Controllers\Post\EditController;
 use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Post\ShowController;
@@ -10,6 +10,8 @@ use App\Http\Controllers\Post\IndexController;
 use App\Http\Controllers\Post\StoreController;
 use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\UpdateController;
+//Message
+use App\Http\Controllers\Message\StoreMessageController;
 
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
@@ -54,7 +56,10 @@ Route::delete('/main/{post}',[DestroyController::class,'destroy'])->name('main.d
 });
 
 //Отправка формы сообщения от пользователей
-Route::post('/message',[StoreController::class,'storeMessage'])->name('main.storeMessage');
+Route::group(['namespace'=>'Message'],function(){
+ Route::post('/message',[StoreMessageController::class,'storeMessage'])->name('main.storeMessage');//проверка строк созданного поста и внесение в базу
+});
+
 
 //Создание раздела понравившегося поста
 Route::get('/likedPosts',[LikedController::class,'likedPost'])->name('user.likedPost');//Роут на понравившиеся посты

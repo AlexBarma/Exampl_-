@@ -5,7 +5,7 @@
     <div class="block_cards mt-20" style="display: flex; flex-wrap:wrap; justify-content: space-around;">
         @foreach ($posts as $post)
                 <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src=" {{ $post->image }}" class="card-img-top" alt="...">
+                    <img style="height: 190px;" src=" {{ $post->image }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
                             <div>{{ $post->title }}</div><br />

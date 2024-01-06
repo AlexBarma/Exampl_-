@@ -10,10 +10,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 
-class IndexController extends BaseController
+class IndexController extends Controller
 {
     public function index()
     {
+
         $posts = Post::all();
 
         //$category = Category::find(2); с помощью метода find() находим категории с id=2
