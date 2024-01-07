@@ -65,7 +65,7 @@ Route::group(['namespace'=>'Message'],function(){
 Route::get('/likedPosts',[LikedController::class,'likedPost'])->name('user.likedPost');//Роут на понравившиеся посты
 Route::post('/addLiked/{post}',[LikedController::class,'addLiked'])->name('main.addLiked');//проверка строк понравивишегося поста и внесение в базу
 
-//Создание роута message
-Route::post('/contact',[ContactController::class,'index'])->name('contact.index');//роута создания и внесения message в базу
+
+
 
 

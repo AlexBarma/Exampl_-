@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Message;
 
 
-use App\Services\Post\Service;
+use App\Services\Message\MessageService;
 use App\Http\Controllers\Controller;
 
-class BaseController extends Controller
+class BaseMessageController extends Controller
 {
-    public $service;
+    public $messageService;
     //Здесь мы прописали $service и присвоили ему с помощью метода __construct контроллер Service который находится \app\Services\Post\Service.php
-    public function __construct(Service $service)
+    public function __construct(MessageService $messageService)
     {
-        $this->service = $service;
+        $this->messageService = $messageService;
     }
 }
