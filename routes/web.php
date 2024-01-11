@@ -30,7 +30,6 @@ use App\Http\Controllers\LikedController;
 |
 */
 
-//Route::get('/', function () {return view('welcome');});//Роут главной страницы
 
 //Авторизация
 Auth::routes();

@@ -22,16 +22,8 @@
                     <p class="card-text">{{ $post->content }}</p>
                     <div style="display: flex; flex-wrap:wrap; justify-content: space-between;">
                         <div>
-                            <a href="{{ route('main.show', $post->id) }}" class="btn btn-primary">Открыть карточку</a>
+                            <a href="{{ route('main.show', $post->id) }}" class="btn btn-primary">Открыть рецепт</a>
                         </div>
-
-                        {{-- <form action="{{ route('catalog.liked',$post->id )}}" method="POST">
-                            @csrf
-                            <button type="submit" class="fw-light nav-link fs-6">
-                                <i class="bi bi-heart{{ ($post->id)? '-fill' : ''}}"></i>
-                            </button>
-                        </form> --}}
-
                     </div>
                 </div>
             </div>

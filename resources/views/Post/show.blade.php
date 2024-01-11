@@ -66,12 +66,12 @@
             <div class="col-4 mb-2"><a href="#" class="btn btn-primary">В карзину</a></div>
             <br />
             <div class="col-4 mb-2"><a href="{{ route('main.edit', $post->id) }}" class="btn btn-primary">Изменить
-                    карточку</a></div>
+                    рецепт</a></div>
             <br />
             <form class="col-4 mb-2" action="{{ route('main.delete', $post->id) }}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-danger">Удалить карточку</button>
+                <button type="submit" class="btn btn-danger">Удалить рецепт</button>
             </form>
             <br />
             <form class="col-4 mb-2" action="{{ route('main.addLiked', $post->id) }}" method="POST">

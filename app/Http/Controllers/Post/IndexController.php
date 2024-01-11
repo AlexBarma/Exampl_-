@@ -14,13 +14,8 @@ class IndexController extends Controller
 {
     public function index()
     {
+        $posts=Post::paginate(10);//Пагинация вводит нужное количество постов на страницу
 
-        $posts = Post::all();
-
-        //$category = Category::find(2); с помощью метода find() находим категории с id=2
-        //$post=Post::find(1); с помощью метода find() находим post с id=2
-        //return dd($post->category); возвращаем категорию этого поста
-        //return dd($category->posts); возвращаем все посты которые привязаны ко второй категории
         return view('index',compact('posts'));
     }
 }

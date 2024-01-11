@@ -26,8 +26,8 @@
                             aria-expanded="false" href="{{ route('main.index') }}">Меню</a>
                         <ul class="dropdown-menu ">
                             @auth
-                                <li><a class="dropdown-item" href="{{ route('main.create') }}">Создать карточку
-                                        товара</a></li>
+                                <li><a class="dropdown-item" href="{{ route('main.create') }}">Создать новый
+                                        рецепт</a></li>
                             @endauth
                             @guest
                                 <li><a class="dropdown-item" href="{{ route('register') }}">Чтобы создать карточку нужно
@@ -54,19 +54,19 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">Войти</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
                             </li>
                         @endif
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Личный кабинет:
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -79,7 +79,8 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <a class="dropdown-item" href="{{ route('user.likedPost') }}">Понравившиеся посты</a>
+                                <a class="dropdown-item" href="{{ route('main.create') }}">Создать новый рецепт</a>
+                                <a class="dropdown-item" href="{{ route('user.likedPost') }}">Понравившиеся рецепты</a>
                             </div>
                         </li>
                     @endguest
@@ -106,29 +107,29 @@
         <div class="col-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    <a class="nav-link"  href="{{ route('main.index') }}">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ route('content.index') }}">Новости</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Docs</a>
+                    <a class="nav-link" href="{{ route('catalog.index') }}">Каталог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Examples</a>
+                    <a class="nav-link" href="{{ route('contact.index') }}">Контакты</a>
                 </li>
             </ul>
         </div>
         <div class="col-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Guides</a>
+                    <a class="nav-link" href="#">О нас</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Getting started</a>
+                    <a class="nav-link" href="#">Партнеры</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Starter template</a>
+                    <a class="nav-link" href="#">Рейтинг</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Webpack</a>
@@ -138,13 +139,13 @@
         <div class="col-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Projects</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Войти</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Icons</a>
+                    <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">RFS</a>
+                    <a class="nav-link" href="#">Поиск</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Examples repo</a>

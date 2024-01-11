@@ -9,6 +9,9 @@
                         {{ $post->title }}</a>
                 @endforeach
             </div>
+            <div class="mt-4">
+                {{ $posts->links() }}<!--Подключение ссылок для работы пагинатации-->
+            </div>
         </div>
         <div class="col-8">
             <div id="carouselExampleCaptions" class="carousel slide">
@@ -25,24 +28,24 @@
                         <img style="height: 445px;" src="https://svet-vostoka.ru/wp-content/uploads/2023/05/%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B5-%D0%BC%D0%BE%D1%82%D0%B8.jpg"
                             class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h5>Вкуснейшие десерты</h5>
+                            <p>Рецепты простых, но вкусных десертов.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img  style="height: 445px;" src="https://megobari.wine/wp-content/uploads/2018/07/O5A6169-2.jpg"
                             class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            <h5>Вкуснейшие десерты</h5>
+                            <p>Рецепты простых, но вкусных десертов.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img  style="height: 445px;" src="https://img51994.telefamily.ru/img/2011-02-28/fmt_114_24_franchd6.jpg"
                             class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <h5>Вкуснейшие десерты</h5>
+                            <p>Рецепты простых, но вкусных десертов.</p>
                         </div>
                     </div>
                 </div>
