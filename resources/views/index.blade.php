@@ -12,6 +12,8 @@
             <div class="mt-4">
                 {{ $posts->links() }}<!--Подключение ссылок для работы пагинатации-->
             </div>
+
+            <!---------------------------------------------------->
         </div>
         <div class="col-8">
             <div id="carouselExampleCaptions" class="carousel slide">

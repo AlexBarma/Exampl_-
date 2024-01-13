@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Filterable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Post extends Model
 {
     use HasFactory;
+    use Filterable;
     use SoftDeletes; //при создании мягкого удаления, в модель обзательно прописывается этот трейд.
     protected $table='posts';
     protected $guarded=[];//отключение защиты ларавел на добавление новых данных или так protected $guarded=false;
