@@ -3,22 +3,27 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 //Post
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\LikedController;
+use App\Http\Controllers\FilterController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\Post\EditController;
-use App\Http\Controllers\Post\DestroyController;
+//Message
 use App\Http\Controllers\Post\ShowController;
 use App\Http\Controllers\Post\IndexController;
 use App\Http\Controllers\Post\StoreController;
 use App\Http\Controllers\Post\CreateController;
+
 use App\Http\Controllers\Post\UpdateController;
-//Message
+use App\Http\Controllers\Post\DestroyController;
+
+//Admin
+use App\Http\Controllers\Admin\AdminPanelController;
+use App\Http\Controllers\Admin\AdminPostController;
+
 use App\Http\Controllers\Message\StoreMessageController;
-
-use App\Http\Controllers\CatalogController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ContentController;
-use App\Http\Controllers\MainController;
-
-use App\Http\Controllers\LikedController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +48,14 @@ Route::get('/content',[ContentController::class,'index'])->name('content.index')
 Route::get('/catalog',[CatalogController::class,'index'])->name('catalog.index');//Роут страницы каталог
 Route::get('/contact',[ContactController::class,'index'])->name('contact.index');//Роут страницы контакты
 
+//Создание админ панели
+
+Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
+Route::get('/',[AdminPanelController::class,'index'])->name('admin.index');//Роут админ панели
+Route::get('/post',[AdminPostController::class,'index'])->name('admin.post.index');//Редактор постов в админке
+});
+
+
 //Создание и редактирование поста
 Route::group(['namespace'=>'Post'], function(){
 Route::get('/',[IndexController::class,'index'])->name('main.index');//Роут slide и posts главной страницы
@@ -65,6 +78,7 @@ Route::get('/likedPosts',[LikedController::class,'likedPost'])->name('user.liked
 Route::post('/addLiked/{post}',[LikedController::class,'addLiked'])->name('main.addLiked');//проверка строк понравивишегося поста и внесение в базу
 
 
+//Фильтр
 
 
 
