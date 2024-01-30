@@ -51,9 +51,11 @@ Route::get('/contact',[ContactController::class,'index'])->name('contact.index')
 //Создание админ панели
 
 Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
-Route::get('/',[AdminPanelController::class,'index'])->name('admin.index');//Роут админ панели
-Route::get('/post',[AdminPostController::class,'index'])->name('admin.post.index');//Редактор постов в админке
+Route::get('/',[AdminPanelController::class,'index'])->name('admin.index');//Роут главной страницы админ панели
+Route::get('/post',[AdminPostController::class,'index'])->name('admin.post.index');//Роут список постов в админке
 });
+
+// Route::get('/post',[AdminPostController::class,'index'])->name('post.index');//Редактор постов в админке
 
 
 //Создание и редактирование поста
