@@ -8,10 +8,11 @@
                         href="{{ route('main.show', $post->id) }}">{{ $post->id }}.
                         {{ $post->title }}</a>
                 @endforeach
+                <div class="mt-4">
+                    {{ $posts->links() }}<!--Подключение ссылок для работы пагинатации-->
+                </div>
             </div>
-            <div class="mt-4">
-                {{ $posts->links() }}<!--Подключение ссылок для работы пагинатации-->
-            </div>
+
 
             <!---------------------------------------------------->
         </div>
@@ -27,7 +28,8 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img style="height: 445px;" src="https://svet-vostoka.ru/wp-content/uploads/2023/05/%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B5-%D0%BC%D0%BE%D1%82%D0%B8.jpg"
+                        <img style="height: 445px;"
+                            src="https://svet-vostoka.ru/wp-content/uploads/2023/05/%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B5-%D0%BC%D0%BE%D1%82%D0%B8.jpg"
                             class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Вкуснейшие десерты</h5>
@@ -35,7 +37,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img  style="height: 445px;" src="https://megobari.wine/wp-content/uploads/2018/07/O5A6169-2.jpg"
+                        <img style="height: 445px;" src="https://megobari.wine/wp-content/uploads/2018/07/O5A6169-2.jpg"
                             class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Вкуснейшие десерты</h5>
@@ -43,7 +45,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img  style="height: 445px;" src="https://img51994.telefamily.ru/img/2011-02-28/fmt_114_24_franchd6.jpg"
+                        <img style="height: 445px;"
+                            src="https://img51994.telefamily.ru/img/2011-02-28/fmt_114_24_franchd6.jpg"
                             class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Вкуснейшие десерты</h5>

@@ -21,9 +21,11 @@ use App\Http\Controllers\Post\DestroyController;
 
 //Admin
 use App\Http\Controllers\Admin\AdminPanelController;
-use App\Http\Controllers\Admin\AdminPostController;
-
 use App\Http\Controllers\Message\StoreMessageController;
+
+use App\Http\Controllers\Admin\AdminPost\AdminPostController;
+use App\Http\Controllers\Admin\AdminPost\AdminStorePostController;
+use App\Http\Controllers\Admin\AdminPost\AdminCreatePostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,11 +53,13 @@ Route::get('/contact',[ContactController::class,'index'])->name('contact.index')
 //Создание админ панели
 
 Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
-Route::get('/',[AdminPanelController::class,'index'])->name('admin.index');//Роут главной страницы админ панели
-Route::get('/post',[AdminPostController::class,'index'])->name('admin.post.index');//Роут список постов в админке
+    Route::get('/',[AdminPanelController::class,'index'])->name('admin.index');//Роут главной страницы админ панели
+        Route::group(['namespace'=>'AdminPost','prefix'=>'post'],function(){
+            Route::get('/',[AdminPostController::class,'index'])->name('admin.post.index');//Роут список постов в админке
+            Route::get('/create',[AdminCreatePostController::class,'create'])->name('admin.post.create');//создание нового поста
+            Route::post('/',[AdminStorePostController::class,'store'])->name('admin.post.store');//проверка строк созданного поста и внесение в базу
+        });
 });
-
-// Route::get('/post',[AdminPostController::class,'index'])->name('post.index');//Редактор постов в админке
 
 
 //Создание и редактирование поста
