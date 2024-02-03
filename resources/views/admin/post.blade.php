@@ -58,6 +58,6 @@
     <!-- /.card-body -->
     <div class="card-footer clearfix">
         <a href="{{ route('admin.post.create') }}" class="btn btn-sm btn-info float-left">Создать новый пост</a>
-        <a href="#" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+        <a href="#" class="btn btn-sm btn-secondary float-right">Показать все посты</a>
     </div>
 @endsection

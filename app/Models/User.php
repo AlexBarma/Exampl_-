@@ -58,7 +58,7 @@ class User extends Authenticatable
         return [];
     }
 
-    //Функция которая где у одного User есть много постов из  с таблицей post_user_likes
+    //Функция которая говорит что у одного User есть много постов из  с таблицей post_user_likes
     public function likedPosts(){
         return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', 'post_id');
     }

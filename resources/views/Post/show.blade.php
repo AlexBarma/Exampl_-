@@ -63,7 +63,7 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-4 mb-2"><a href="#" class="btn btn-primary">В карзину</a></div>
+            <div class="col-4 mb-2"><a href="#" class="btn btn-primary">В корзину</a></div>
             <br />
             <div class="col-4 mb-2"><a href="{{ route('main.edit', $post->id) }}" class="btn btn-primary">Изменить
                     рецепт</a></div>

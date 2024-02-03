@@ -52,7 +52,7 @@ Route::get('/contact',[ContactController::class,'index'])->name('contact.index')
 
 //Создание админ панели
 
-Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function(){
+Route::group(['namespace'=>'Admin', 'prefix'=>'admin','middleware'=>'admin'], function(){
     Route::get('/',[AdminPanelController::class,'index'])->name('admin.index');//Роут главной страницы админ панели
         Route::group(['namespace'=>'AdminPost','prefix'=>'post'],function(){
             Route::get('/',[AdminPostController::class,'index'])->name('admin.post.index');//Роут список постов в админке

@@ -47,10 +47,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact.index') }}">Контакты</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
-                    </li>
-
+                    @auth
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
+                        </li>
+                    @endauth
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->

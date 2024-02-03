@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdminPanelController extends Controller
 {
     public function index(){
-        return view('layouts.admin');
+        $posts=Post::all();
+        // dd(count($posts));
+        return view('layouts.admin',compact('posts'));
     }
 }

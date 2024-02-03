@@ -229,7 +229,7 @@
                                 <p>
                                     Посты
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">5</span>
+
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -237,6 +237,9 @@
                                     <a href="{{ route('admin.post.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Список постов</p>
+                                        <span class="badge badge-info right">
+                                            34
+                                        </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -272,7 +275,6 @@
                                 <p>
                                     Настройки
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">5</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -365,10 +367,9 @@
                                 <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">CPU Traffic</span>
+                                    <span class="info-box-text">All posts</span>
                                     <span class="info-box-number">
-                                        10
-                                        <small>%</small>
+                                         34
                                     </span>
                                 </div>
                                 <!-- /.info-box-content -->
@@ -466,9 +467,9 @@
         <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 
         <!-- AdminLTE for demo purposes -->
-        <script src="{{ asset('dist/js/demo.js') }}"></script>
+        {{-- <script src="{{ asset('dist/js/demo.js') }}"></script> --}}
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
+        {{-- <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script> --}}
 </body>
 
 </html>

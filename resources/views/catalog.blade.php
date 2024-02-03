@@ -6,20 +6,6 @@
     <div><a href="{{ route('catalog.index', 'category_id=2') }}"> Найди Кислые рецепты </a></div>
     <br>
 
-    {{-- @foreach ($categories as $category)
-        <form action="{{ route('catalog.index',$category->id) }}" method="GET">
-            @csrf
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="{{ $category->title }}" id="{{ $category->id }}" value="{{ $category->id }}">
-                <label class="form-check-label" for="{{ $category->id }}" >
-                    {{ $category->title }}
-                </label>
-            </div>
-    @endforeach
-        <button type="submit" class="btn btn-primary ">показать</button>
-        </form> --}}
-
-
         <div class="block_cards mt-20" style="display: flex; flex-wrap:wrap; justify-content: space-around;">
             @foreach ($postFilters as $postfilter)
                 <div class="card" style="width: 18rem;margin-top:20px;">
@@ -41,6 +27,13 @@
                                 <a href="{{ route('main.show', $postfilter->id) }}" class="btn btn-primary">Открыть
                                     рецепт</a>
                             </div>
+                            <!--Поставить возможность лайкнуть пост------------------------------------------------------->
+                            <form action="#" method="POST">
+                                @csrf
+                                <button type="submit" class="fw-light nav-link fs-6">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
