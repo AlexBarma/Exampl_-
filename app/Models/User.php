@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function likedPosts(){
         return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', 'post_id');
     }
+
+    public function publishedPosts(){//создается функция опубликованных постов в классе  user которая позволяет возвращать информацию о любых постах определенного пользователя
+        return $this->hasMany(Post::class, 'user_id','id');//hasMany() говорит о том что у user имеет много постов и уточнение Где т.е. Post::class Название ключа т.е. 'user_id' и Название колонки ключа  т.е 'id'
+    }
 }

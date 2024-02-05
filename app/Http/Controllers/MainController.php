@@ -11,6 +11,7 @@ class MainController extends Controller
 {
     public function index()
     {
+        // $this->authorize('view',auth()->user()); вариант одной из работ с полицией
         $posts = auth()->user()->LikedPosts;
         return view('layouts.main', compact('posts'));
     }

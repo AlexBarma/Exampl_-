@@ -14,15 +14,20 @@ use App\Http\Controllers\Post\EditController;
 use App\Http\Controllers\Post\ShowController;
 use App\Http\Controllers\Post\IndexController;
 use App\Http\Controllers\Post\StoreController;
-use App\Http\Controllers\Post\CreateController;
 
+
+use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\UpdateController;
-use App\Http\Controllers\Post\DestroyController;
 
 //Admin
+use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Admin\AdminPanelController;
-use App\Http\Controllers\Message\StoreMessageController;
 
+//Account
+use App\Http\Controllers\Account\AccountMenuController;
+use App\Http\Controllers\Account\Post\AccountPostController;
+
+use App\Http\Controllers\Message\StoreMessageController;
 use App\Http\Controllers\Admin\AdminPost\AdminPostController;
 use App\Http\Controllers\Admin\AdminPost\AdminStorePostController;
 use App\Http\Controllers\Admin\AdminPost\AdminCreatePostController;
@@ -83,8 +88,14 @@ Route::group(['namespace'=>'Message'],function(){
 Route::get('/likedPosts',[LikedController::class,'likedPost'])->name('user.likedPost');//Роут на понравившиеся посты
 Route::post('/addLiked/{post}',[LikedController::class,'addLiked'])->name('main.addLiked');//проверка строк понравивишегося поста и внесение в базу
 
+//Account личный кабинет
 
-//Фильтр
+Route::group(['namespace'=>'Account','prefix'=>'accountMenu'],function(){
+    Route::get('/',[AccountMenuController::class,'accountMenu'])->name('account.accountMenu');
+        Route::group(['namespace'=>'Post','prefix'=>'post'],function(){
+            Route::get('/',[AccountPostController::class,'accountPost'])->name('account.accountPost');
+        });
+});
 
 
 

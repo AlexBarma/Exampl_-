@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Post;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRequest extends FormRequest
@@ -24,6 +25,7 @@ class StoreRequest extends FormRequest
         return [
             'title' => '',
             'content' => '',
+            'user_id'=>'',
             'category_id' => '',
             'image' => '',
         ];

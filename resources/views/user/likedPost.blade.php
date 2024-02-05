@@ -1,7 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.account')
 
-@section('content')
-    <br />
+@section('account')
+<div class="col-8">
     <div class="block_cards mt-20" style="display: flex; flex-wrap:wrap; justify-content: space-around;">
         @foreach ($posts as $post)
                 <div class="card" style="width: 18rem;margin-top:20px;">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
         @endforeach
     </div>
 @endsection

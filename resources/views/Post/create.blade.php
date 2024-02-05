@@ -30,6 +30,17 @@
             <label for="image" class="form-label">Изображение</label>
             <input type="text" name="image" class="form-control" id="image" placeholder="Image">
         </div>
+        {{-- <div class="mb-3">
+            <label for="User" class="form-label">Автор</label>
+            <select name="user_id" class="form-control" id="user_id" placeholder="User">
+                    {
+                    <option selected value="{{ $user_id }}">
+                        {{ $user_id }}
+                    </option>
+                    }
+            </select>
+        </div> --}}
+        <input type="hidden" name="user_id" value="{{ $user_id }}">
         <button type="submit" class="btn btn-primary">Создать карточку</button>
     </form>
 @endsection

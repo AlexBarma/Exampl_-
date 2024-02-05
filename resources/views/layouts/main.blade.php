@@ -47,11 +47,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact.index') }}">Контакты</a>
                     </li>
-                    @auth
-                          <li class="nav-item">
+                    @can('view', auth()->user())
+                        <!-----Открываем этот элемент только для пользователей с ролью администратора---------------------------------------------->
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
                         </li>
-                    @endauth
+                    @endcan
+
+
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
@@ -71,10 +74,19 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Личный кабинет:
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name }}<span class="badge text-bg-secondary"
+                                    style="margin-left: 5px;">4</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{ route('account.accountPost') }}"> Мои рецепты</a>
+                                <a class="dropdown-item" href="{{ route('user.likedPost') }}">Избранные рецепты</a>
+                                <a class="dropdown-item" href="{{ route('main.create') }}">Создать новый рецепт</a>
+                                <a class="dropdown-item" href="#">Почта<span class="badge text-bg-secondary"
+                                    style="margin-left: 5px;">4</span></a>
+                                <a class="dropdown-item" href="#">Корзина</a>
+                                <a class="dropdown-item" href="#">Мой аккаунт</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -83,8 +95,6 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <a class="dropdown-item" href="{{ route('main.create') }}">Создать новый рецепт</a>
-                                <a class="dropdown-item" href="{{ route('user.likedPost') }}">Понравившиеся рецепты</a>
                             </div>
                         </li>
                     @endguest
@@ -111,7 +121,7 @@
         <div class="col-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link"  href="{{ route('main.index') }}">Главная</a>
+                    <a class="nav-link" href="{{ route('main.index') }}">Главная</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('content.index') }}">Новости</a>
