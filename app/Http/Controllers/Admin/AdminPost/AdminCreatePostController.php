@@ -11,6 +11,6 @@ class AdminCreatePostController extends AdminBaseController
     public function create(Post $post){
         $categories=Category::all();
 
-        return view('admin.create',compact('categories'));
+        return view('admin.adminPost.admin_create',compact('categories'));
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('content')
     <div class="card mb-3" style="max-width: 1140px;">
@@ -25,10 +25,10 @@
         <div class="row">
             <div class="col-4 mb-2"><a href="#" class="btn btn-primary">В корзину</a></div>
             <br />
-            <div class="col-4 mb-2"><a href="{{ route('main.edit', $post->id) }}" class="btn btn-primary">Изменить
+            <div class="col-4 mb-2"><a href="{{ route('admin.post.edit', $post->id) }}" class="btn btn-primary">Изменить
                     рецепт</a></div>
             <br />
-            <form class="col-4 mb-2" action="{{ route('main.delete', $post->id) }}" method="POST">
+            <form class="col-4 mb-2" action="{{ route('admin.post.delete', $post->id) }}" method="POST">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger">Удалить рецепт</button>
@@ -48,7 +48,7 @@
                 @endguest
             </form>
             <br />
-            <div class="col-4 mb-2"><a href="{{ route('catalog.index') }}"class="btn btn-primary">Назад</a></div>
+            <div class="col-4 mb-2"><a href="{{ route('admin.post.index') }}"class="btn btn-primary">Назад</a></div>
             <br>
         </div>
     </div>

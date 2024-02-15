@@ -15,8 +15,8 @@
             </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body p-0">
-            <div class="table-responsive">
+        <div class="card-body p-0" >
+            <div class="table-responsive" style="border-radius: 10px">
                 <table class="table m-0">
                     <thead>
                         <tr>
@@ -29,23 +29,29 @@
                     </thead>
                     <tbody>
                         @foreach ($posts as $post)
-                            <tr>
-                                <td><a href="#">{{ $post->id }}</a></td>
-                                <td><a href="#">{{ $post->title }}</a></td>
-                                @foreach ($categories as $category)
-                                    @if ($post->category_id == $category->id)
-                                        <td><span class="badge badge-success">{{ $category->title }}</span></td>
-                                    @endif
-                                @endforeach
-                                <td>
-                                    <div class="sparkbar" data-color="#00a65a">
-                                        <img style="height: 50px;" src="{{ $post->image }}" alt="img_post">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="sparkbar" data-color="#00a65a" data-height="20">{{ $post->content }}</div>
-                                </td>
-                            </tr>
+                            @foreach ($users as $user)
+                                @if ($post->user_id == $user->id)
+                                    <tr>
+                                        <td><a href="#">{{ $post->id }}</a></td>
+                                        <td><a href="#">{{ $post->title }}</a></td>
+                                        @foreach ($categories as $category)
+                                            @if ($post->category_id == $category->id)
+                                                <td><span class="badge badge text-bg-success">{{ $category->title }}</span>
+                                                </td>
+                                            @endif
+                                        @endforeach
+                                        <td>
+                                            <div class="sparkbar" data-color="#00a65a">
+                                                <img style="height: 50px;" src="{{ $post->image }}" alt="img_post">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="sparkbar" data-color="#00a65a" data-height="20">{{ $post->content }}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
                         @endforeach
 
                     </tbody>

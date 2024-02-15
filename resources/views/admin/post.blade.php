@@ -29,11 +29,11 @@
                 <tbody>
                     @foreach ($posts as $post)
                         <tr>
-                            <td><a href="#">{{ $post->id }}</a></td>
-                            <td><a href="#">{{ $post->title }}</a></td>
+                            <td><a href="{{ route('admin.post.show', $post->id) }}">{{ $post->id }}</a></td>
+                            <td><a href="{{ route('admin.post.show', $post->id) }}">{{ $post->title }}</a></td>
                             @foreach ($categories as $category)
                                 @if ($post->category_id == $category->id)
-                                    <td><span class="badge badge-success">{{ $category->title }}</span></td>
+                                    <td><span class="badge badge text-bg-success">{{ $category->title }}</span></td>
                                 @endif
                             @endforeach
                             <td>
@@ -43,6 +43,16 @@
                             </td>
                             <td>
                                 <div class="sparkbar" data-color="#00a65a" data-height="20">{{ $post->content }}</div>
+                            </td>
+                            <td>
+                            <div class="col-4 mb-2"><a  href="{{ route('admin.post.edit', $post->id) }}" class="btn btn-primary">Изменить</a></div>
+                            </td>
+                            <td>
+                            <form class="col-4 mb-2" action="{{ route('admin.post.delete', $post->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger">Удалить</button>
+                            </form>
                             </td>
                         </tr>
                     @endforeach

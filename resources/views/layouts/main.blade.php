@@ -11,7 +11,7 @@
 
 <body class="antialiased container ">
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-        <div class="container-fluid ">
+        <div class="container-fluid " >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" style="width: 3rem;" href="{{ route('main.index') }}"><img
@@ -107,7 +107,8 @@
             </div>
         </div>
     </nav>
-    <div class="container text-bg-dark bg-gradient p-3">
+    <!--Block posts list and slider-->
+    <div class="container text-bg-dark bg-gradient p-3" style="border-radius: 20px;">
         @yield('content')
         <!--Путь к страницам для этого шаблона-->
     </div>
